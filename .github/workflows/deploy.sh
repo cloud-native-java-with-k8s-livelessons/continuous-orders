@@ -6,7 +6,7 @@ APP_NAME=feed-ingest-job
 PROJECT_ID=${GCLOUD_PROJECT}
 TAG_NAME=${1:-$(date +%s)}
 IMAGE_TAG="production${GITHUB_SHA:-}"
-GCR_IMAGE_NAME=gcr.io/${PROJECT_ID}/twi-${APP_NAME}
+GCR_IMAGE_NAME=gcr.io/${PROJECT_ID}/continuous-${APP_NAME}
 mvn -f ${ROOT_DIR}/../../pom.xml -DskipTests=true \
   -e -Dspring.profiles.active=production  \
   clean \
