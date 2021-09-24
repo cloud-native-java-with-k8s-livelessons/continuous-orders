@@ -6,7 +6,7 @@ APP_NAME=customers
 MANIFESTS_DIR=$HERE/k8s/manifests
 IMAGE_NAME=gcr.io/bootiful/${APP_NAME}:latest
 cd $HERE/../..
-mvn -DskipTests=true clean package spring-boot:build-image -Dspring-boot.build-image.imageName=${IMAGE_NAME}
+mvn clean package spring-boot:build-image -Dspring-boot.build-image.imageName=${IMAGE_NAME}
 docker push $IMAGE_NAME
 mkdir -p $MANIFESTS_DIR
 kubectl apply -f k8s/
