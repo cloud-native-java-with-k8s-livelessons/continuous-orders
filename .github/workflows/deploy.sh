@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -e
-HERE=$(cd $(dirname $0 && pwd ))
+HERE=$(cd $(dirname $0 ) && pwd )
 NS=cnj
 APP_NAME=customers
 MANIFESTS_DIR=$HERE/k8s/manifests
