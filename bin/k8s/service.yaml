@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    cloud.google.com/neg: '{"ingress":true}'
+  labels:
+    app: customers
+  name: customers
+  namespace: cnj
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: customers
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
