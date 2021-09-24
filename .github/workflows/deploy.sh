@@ -10,6 +10,3 @@ mvn -DskipTests=true clean package spring-boot:build-image -Dspring-boot.build-i
 docker push $IMAGE_NAME
 mkdir -p $MANIFESTS_DIR
 kubectl apply -f k8s/
-sleep 5
-kubectl -n $NS port-forward deployment/$APP_NAME 8080:8080  &
-curl -s localhost:8080/actuator/health/liveness | jq
