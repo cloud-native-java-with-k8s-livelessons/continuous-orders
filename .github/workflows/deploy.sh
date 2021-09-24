@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+set -e
 HERE=$(cd $(dirname $0 && pwd ))
 NS=cnj
 APP_NAME=customers
